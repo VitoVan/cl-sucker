@@ -20,7 +20,7 @@ You will get a file named `puker` in the current directory, send that file to yo
 
 # Where to download?
 
-[![v41.9.1 CI Build](https://github.com/VitoVan/cl-sucker/actions/workflows/main.yml/badge.svg?branch=v41.9.1)](<https://github.com/VitoVan/cl-sucker/releases/tag/v41.9.0>)
+[![v41.9.1 CI Build](https://github.com/VitoVan/cl-sucker/actions/workflows/main.yml/badge.svg?branch=v41.9.1)](<https://github.com/VitoVan/cl-sucker/releases/tag/v41.9.1>)
 
 # How it works?
 
