@@ -9,9 +9,11 @@ sucker <input-directory> <executable-file>
 
 Usages:
 
-    sucker ./supergame/ ./supergame/bin/run
+    lnx-sucker ./supergame/ ./supergame/bin/run
 
-    sucker.exe ./somevirus/ ./somevirus/diddle.exe
+    mac-sucker ./supergame/ ./supergame/bin/run
+
+    win-sucker.exe ./somevirus/ ./somevirus/diddle.exe
 ```
 
 You will get a file named `puker` in the current directory, send that file to your users, then they will be happy.

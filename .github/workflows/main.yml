@@ -12,7 +12,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  linux-build:
+  lnx-build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -32,14 +32,14 @@ jobs:
       - name: Build cl-sucker
         run: |
           sbcl --load ~/quicklisp/setup.lisp --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
-          mv sucker linux-sucker
+          mv sucker lnx-sucker
           ls -lah .
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
         with:
           files: |
-            linux-sucker
-  macos-build:
+            lnx-sucker
+  mac-build:
     # The type of runner that the job will run on
     runs-on: macos-latest
 
@@ -59,14 +59,14 @@ jobs:
       - name: Build cl-sucker
         run: |
           sbcl --load ~/quicklisp/setup.lisp --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
-          mv sucker macos-sucker
+          mv sucker mac-sucker
           ls -lah .
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
         with:
           files: |
-            macos-sucker
-  windows-build:
+            mac-sucker
+  win-build:
     # The type of runner that the job will run on
     runs-on: windows-latest
 
@@ -102,11 +102,11 @@ jobs:
           $env:Path = "C:\Program Files\sbcl\bin;" + $env:Path
           $env:SBCL_HOME = "C:\Program Files\sbcl\lib\sbcl"
           sbcl --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
-          mv sucker.exe windows-sucker.exe
+          mv sucker.exe win-sucker.exe
           dir
 
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
         with:
           files: |
-            windows-sucker.exe
+            win-sucker.exe
