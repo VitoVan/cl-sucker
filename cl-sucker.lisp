@@ -112,7 +112,7 @@
 
 (defun exec (&optional (cmd *cl-sucker-exec-file*))
   (let ((cmd-path (uiop:native-namestring (merge-pathnames cmd *cl-sucker-dir*))))
-    (msg t "EXECUTING (CHMOD +X): ~A~%" cmd-path)
+    #-win32 (msg t "EXECUTING (CHMOD +X): ~A~%" cmd-path)
     #-win32 (osicat-posix:chmod cmd-path (logior nix:s-iread nix:s-iwrite nix:s-iexec))
     (msg t "EXECUTING (RUN-PROGRAM): ~A~%" cmd-path)
     (uiop:run-program cmd-path :output t)))
