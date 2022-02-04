@@ -1,9 +1,5 @@
-# cl-sucker
-
-[![CI](https://github.com/VitoVan/cl-sucker/actions/workflows/main.yml/badge.svg)](https://github.com/VitoVan/cl-sucker/actions/workflows/main.yml)
-
-
-[![platform support](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows-blue.svg)](https://github.com/VitoVan/cl-sucker/releases/latest)
+# ![Icon](sucker.png) cl-sucker
+[![CI](https://github.com/VitoVan/cl-sucker/actions/workflows/main.yml/badge.svg)](https://github.com/VitoVan/cl-sucker/actions/workflows/main.yml) [![platform support](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows-blue.svg)](https://github.com/VitoVan/cl-sucker/releases/latest)
 
 Sucker's single file binary creator.
 
@@ -106,6 +102,4 @@ sbcl --disable-debugger \
 file ~/quicklisp/local-projects/cl-sucker/sucker
 ```
 
----
-
-![Lisp Caution](http://www.lisperati.com/lisplogo_warning2_256.png)
+[![Lisp Caution](http://www.lisperati.com/lisplogo_warning2_256.png)](http://www.lisperati.com/logo.html)
