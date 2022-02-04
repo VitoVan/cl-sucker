@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/VitoVan/cl-sucker/actions/workflows/main.yml/badge.svg)](https://github.com/VitoVan/cl-sucker/actions/workflows/main.yml)
 
-Self-contained single binary creator, for suckers.
+Sucker's single file binary creator.
 
 ## How to use?
 
