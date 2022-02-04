@@ -33,12 +33,21 @@ jobs:
         run: |
           sbcl --load ~/quicklisp/setup.lisp --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
           mv sucker lnx-sucker
+          sbcl --dynamic-space-size 1024 --load ~/quicklisp/setup.lisp --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
+          mv sucker lnx-sucker-1024
+          sbcl --dynamic-space-size 2048 --load ~/quicklisp/setup.lisp --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
+          mv sucker lnx-sucker-2048
+          sbcl --dynamic-space-size 4096 --load ~/quicklisp/setup.lisp --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
+          mv sucker lnx-sucker-4096
           ls -lah .
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
         with:
           files: |
             lnx-sucker
+            lnx-sucker-1024
+            lnx-sucker-2048
+            lnx-sucker-4096
   mac-build:
     # The type of runner that the job will run on
     runs-on: macos-latest
@@ -60,12 +69,21 @@ jobs:
         run: |
           sbcl --load ~/quicklisp/setup.lisp --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
           mv sucker mac-sucker
+          sbcl --dynamic-space-size 1024 --load ~/quicklisp/setup.lisp --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
+          mv sucker mac-sucker-1024
+          sbcl --dynamic-space-size 2048 --load ~/quicklisp/setup.lisp --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
+          mv sucker mac-sucker-2048
+          sbcl --dynamic-space-size 4096 --load ~/quicklisp/setup.lisp --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
+          mv sucker mac-sucker-4096
           ls -lah .
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
         with:
           files: |
             mac-sucker
+            mac-sucker-1024
+            mac-sucker-2048
+            mac-sucker-4096
   win-build:
     # The type of runner that the job will run on
     runs-on: windows-latest
@@ -103,6 +121,12 @@ jobs:
           $env:SBCL_HOME = "C:\Program Files\sbcl\lib\sbcl"
           sbcl --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
           mv sucker.exe win-sucker.exe
+          sbcl --dynamic-space-size 1024 --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
+          mv sucker.exe win-sucker-1024.exe
+          sbcl --dynamic-space-size 2048 --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
+          mv sucker.exe win-sucker-2048.exe
+          sbcl --dynamic-space-size 4096 --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
+          mv sucker.exe win-sucker-4096.exe
           dir
 
       - name: GH Release
@@ -110,3 +134,6 @@ jobs:
         with:
           files: |
             win-sucker.exe
+            win-sucker-1024.exe
+            win-sucker-2048.exe
+            win-sucker-4096.exe

@@ -12,7 +12,9 @@
                             #+win32 ".exe"
                             #-win32 ""))
    :executable t
-   :compression 9))
+   :compression 9
+   #+(and sbcl win32) :application-type
+   #+(and sbcl win32) :gui))
 
 (defun after-puke ()
   (msg t "APPLYING DEFAULT AFTER-PUKE HOOK: EXECUTING~%")

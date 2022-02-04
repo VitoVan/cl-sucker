@@ -12,16 +12,22 @@
 (defparameter *cl-sucker-gibberish* t)
 (defparameter *cl-sucker-holyfile* (or (uiop:getenv "CL_SUCKER_HOLYFILE") #p"./holy-sucker.lisp"))
 (defparameter *cl-sucker-ascii* "
-  ██████  █    ██  ▄████▄   ██ ▄█▀▓█████  ██▀███  
+This program is free software. It comes without any warranty, to
+the extent permitted by applicable law. You can redistribute it
+and/or modify it under the terms of the Do What The Fuck You Want
+To Public License, Version 2, as published by Sam Hocevar. See
+http://www.wtfpl.net/ for more details.
+
+  ██████  █    ██  ▄████▄   ██ ▄█▀▓█████  ██▀███
 ▒██    ▒  ██  ▓██▒▒██▀ ▀█   ██▄█▒ ▓█   ▀ ▓██ ▒ ██▒
 ░ ▓██▄   ▓██  ▒██░▒▓█    ▄ ▓███▄░ ▒███   ▓██ ░▄█ ▒
-  ▒   ██▒▓▓█  ░██░▒▓▓▄ ▄██▒▓██ █▄ ▒▓█  ▄ ▒██▀▀█▄  
+  ▒   ██▒▓▓█  ░██░▒▓▓▄ ▄██▒▓██ █▄ ▒▓█  ▄ ▒██▀▀█▄
 ▒██████▒▒▒▒█████▓ ▒ ▓███▀ ░▒██▒ █▄░▒████▒░██▓ ▒██▒
 ▒ ▒▓▒ ▒ ░░▒▓▒ ▒ ▒ ░ ░▒ ▒  ░▒ ▒▒ ▓▒░░ ▒░ ░░ ▒▓ ░▒▓░
 ░ ░▒  ░ ░░░▒░ ░ ░   ░  ▒   ░ ░▒ ▒░ ░ ░  ░  ░▒ ░ ▒░
-░  ░  ░   ░░░ ░ ░ ░        ░ ░░ ░    ░     ░░   ░ 
-      ░     ░     ░ ░      ░  ░      ░  ░   ░     
-                  ░                               
+░  ░  ░   ░░░ ░ ░ ░        ░ ░░ ░    ░     ░░   ░
+      ░     ░     ░ ░      ░  ░      ░  ░   ░
+                  ░
 ")
 
 (defun file-to-byte (path)
@@ -113,34 +119,31 @@
 (defun exec (&optional (cmd *cl-sucker-exec-file*))
   (let ((cmd-path (uiop:native-namestring (merge-pathnames cmd *cl-sucker-dir*))))
     #-win32 (msg t "EXECUTING (CHMOD +X): ~A~%" cmd-path)
-    #-win32 (osicat-posix:chmod cmd-path (logior nix:s-iread nix:s-iwrite nix:s-iexec))
+    #-win32 (uiop:run-program (format nil "chmod +x ~A" cmd-path))
     (msg t "EXECUTING (RUN-PROGRAM): ~A~%" cmd-path)
     (uiop:run-program cmd-path :output t)))
 
 (defun show-help-and-quit ()
   (format t
-          "This program is free software. It comes without any warranty, to
-the extent permitted by applicable law. You can redistribute it
-and/or modify it under the terms of the Do What The Fuck You Want
-To Public License, Version 2, as published by Sam Hocevar. See
-http://www.wtfpl.net/ for more details.
-~A
-cl-sucker version: ~A
-
+          "
 sucker <input-directory> <executable-file>
 
 Usages:
 
-    sucker ./supergame/ ./supergame/bin/run
+    lnx-sucker ./supergame/ ./supergame/bin/run
 
-    sucker.exe ./somevirus/ ./somevirus/diddle.exe
+    mac-sucker ./supergame/ ./supergame/bin/run
 
-You will get a file named `puker` in the current directory.
+    win-sucker.exe ./somevirus/ ./somevirus/diddle.exe
+
+You will get a file named `puker~A` in the current directory.
 
 For more advanced usages (e.g. holy-sucker.lisp),
 check: https://github.com/VitoVan/cl-sucker
 
-" *cl-sucker-ascii* (slot-value (asdf:find-system "cl-sucker") 'asdf:version))
+" (slot-value (asdf:find-system "cl-sucker") 'asdf:version)
+          #+win32 ".exe"
+          #-win32 "")
   (uiop:quit))
 
 (defun entry ()
