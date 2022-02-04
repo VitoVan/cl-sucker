@@ -124,7 +124,7 @@ http://www.wtfpl.net/ for more details.
     #-win32 (msg t "EXECUTING (CHMOD +X): ~A~%" cmd-path)
     #-win32 (uiop:run-program (format nil "chmod +x ~A" cmd-path))
     (msg t "EXECUTING (RUN-PROGRAM): ~A~%" cmd-path)
-    (uiop:run-program cmd-path :output t)))
+    (uiop:run-program cmd-path :output :interactive)))
 
 (defun show-help-and-quit ()
   (format t
