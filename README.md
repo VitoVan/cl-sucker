@@ -2,6 +2,9 @@
 
 [![CI](https://github.com/VitoVan/cl-sucker/actions/workflows/main.yml/badge.svg)](https://github.com/VitoVan/cl-sucker/actions/workflows/main.yml)
 
+
+[![platform support](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows-blue.svg)](https://github.com/VitoVan/cl-sucker/releases/latest)
+
 Sucker's single file binary creator.
 
 ## How to use?
