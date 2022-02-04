@@ -24,7 +24,7 @@ You will get a file named `puker` in the current directory, send that file to yo
 
 https://github.com/VitoVan/cl-sucker/releases/latest
 
-The higher number subfix, the higher suckabilities and much more suckfulness.
+The higher number suffix, the higher suckabilities and much more suckfulness.
 
 ## How it works?
 
