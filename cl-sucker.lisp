@@ -5,9 +5,12 @@
 ;; use `rekcus` instead of `sucker`
 ;; let's take care of those civilized ones
 (defparameter *cl-sucker-dir*
-  #+darwin "~/.local/rekcus/cache/"
-  #+linux "~/.local/share/rekcus/cache/"
-  #+win32 "~/AppData/Local/rekcus/cache/")
+  (concatenate 'string
+               #+darwin "~/.local/rekcus/cache/"
+               #+linux "~/.local/share/rekcus/cache/"
+               #+win32 "~/AppData/Local/rekcus/cache/"
+               (uuid:print-bytes nil (uuid:make-v4-uuid))
+               "/"))
 
 (defparameter *cl-sucker-gibberish* t)
 (defparameter *cl-sucker-holyfile* (or (uiop:getenv "CL_SUCKER_HOLYFILE") #p"./holy-sucker.lisp"))

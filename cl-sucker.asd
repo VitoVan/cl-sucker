@@ -13,7 +13,8 @@
   :license "WTFPL"
   :serial t
   :depends-on (#:unix-opts
-               #:cl-fad)
+               #:cl-fad
+               #:uuid)
   :components ((:file "package")
                (:file "ordinary-sucker")
                (:file "cl-sucker"))
