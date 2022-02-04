@@ -102,3 +102,7 @@ sbcl --disable-debugger \
 
 file ~/quicklisp/local-projects/cl-sucker/sucker
 ```
+
+---
+
+![Lisp Caution](http://www.lisperati.com/lisplogo_warning2_256.png)
