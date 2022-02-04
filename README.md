@@ -55,7 +55,7 @@ The only shits puked out by cl-sucker is located at:
   #+win32 "~/AppData/Local/rekcus/cache/")
 ```
 
-## How do I say to my customers, in case they asked about the internal machanism
+## How do I say to my customers if they asked about the internal machanism?
 
 If your customers are the civilized ones who cannot accept the word *sucker*, then you have at least 3 solutions:
 
