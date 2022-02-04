@@ -39,6 +39,7 @@ jobs:
           mv sucker lnx-sucker-2048
           sbcl --dynamic-space-size 4096 --load ~/quicklisp/setup.lisp --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
           mv sucker lnx-sucker-4096
+          chmod +x lnx-*
           ls -lah .
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
@@ -75,6 +76,7 @@ jobs:
           mv sucker mac-sucker-2048
           sbcl --dynamic-space-size 4096 --load ~/quicklisp/setup.lisp --load ./cl-sucker.asd --eval "(ql:quickload 'cl-sucker)" --eval "(asdf:make :cl-sucker)"
           mv sucker mac-sucker-4096
+          chmod +x mac-*
           ls -lah .
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
