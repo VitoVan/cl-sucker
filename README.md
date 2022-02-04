@@ -90,6 +90,16 @@ CL_SUCKER_GIBBERISH=NIL
 CL_SUCKER_HOLYFILE=NIL
 ```
 
+## Supreme usage?
+
+You do not actually need to download the binary sucker, write your own `holy-sucker.lisp`, and in the same directory:
+
+```bash
+sbcl --eval "(ql:quickload 'your-awesome-shit)" \
+     --eval "(ql:quickload 'cl-sucker)" \
+     --eval "(cl-sucker:entry)"
+```
+
 ## How to build?
 
 ```bash
