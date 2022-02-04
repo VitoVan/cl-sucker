@@ -24,6 +24,8 @@ You will get a file named `puker` in the current directory, send that file to yo
 
 https://github.com/VitoVan/cl-sucker/releases/latest
 
+The higher number subfix, the higher suckabilities and much more suckfulness.
+
 ## How it works?
 
 1. Suck
@@ -67,7 +69,7 @@ Oh yeah? So what?
 
 ## Heap exhausted?
 
-That means you are sucking to many files, please try the 1024 or higher version, they got higher suckabilities, and much more suckness.
+That means you are sucking to many files, please try the 1024 or higher version, they got higher suckabilities, and much more suckfulness.
 
 ## Advanced usage?
 
