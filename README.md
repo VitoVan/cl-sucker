@@ -54,17 +54,9 @@ The only shits puked out by cl-sucker is located at:
   #+win32 "~/AppData/Local/rekcus/cache/")
 ```
 
-## How do I say to my customers if they asked about the internal machanism?
+## The generated executable is sooooooo big!
 
-If your customers are the civilized ones who cannot accept the word *sucker*, then you have at least 3 solutions:
-
-1. tell them to take care of their own shit and fuck off, or
-2. tell them you are using the Common Lisp - SUpreme Compress Kit Enhanced Revision
-3. tell them you are using the REKCUS packaging system. If they asked about what REKCUS stands for - which they won't since they are civilized person - then go back to the first solution
-
-## The generated executable `puker` is so big!
-
-Oh yeah? So what?
+That should be called 'Super Cool': https://youtu.be/M7vkau14LDI?t=361
 
 ## Heap exhausted?
 
