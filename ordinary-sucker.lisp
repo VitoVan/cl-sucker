@@ -3,7 +3,7 @@
 ;; this is not needed in oridnary sucker,
 ;; but if you're using holy-sucker.lisp,
 ;; these two must be set
-(defparameter *cl-sucker-input-dir* nil)
+(defparameter *cl-sucker-include-dir* nil)
 (defparameter *cl-sucker-exec-file* nil)
 
 (defun after-suck ()

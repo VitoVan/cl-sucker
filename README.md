@@ -6,7 +6,7 @@ Sucker's single file binary creator.
 ## How to use?
 
 ```bash
-sucker <input-directory> <executable-file>
+sucker <include-directory> <executable-file>
 
 Usages:
 
@@ -29,7 +29,7 @@ The higher number suffix, the higher suckabilities and much more suckfulness.
 
 1. Suck
 
-   Loads everything in the `input-directory` recursively into memory, and dump itself as an executable lisp image.
+   Loads everything in the `include-directory` recursively into memory, and dump itself as an executable lisp image.
 
 2. Puke
 

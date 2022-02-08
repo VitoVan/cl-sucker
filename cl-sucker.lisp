@@ -75,9 +75,9 @@ http://www.wtfpl.net/ for more details.
         (progn
           (when (or (member "-h" args :test #'string-equal) (not (= (length args) 2)))
             (show-help-and-quit))
-          (let ((input-dir (first args))
+          (let ((include-dir (first args))
                 (exec-file (second args)))
-            (setf *cl-sucker-input-dir* input-dir)
+            (setf *cl-sucker-include-dir* include-dir)
             (setf *cl-sucker-exec-file* exec-file)))
         ;; if not args provided, then it's holy sucker
         ;; try loading sucker-config.lisp
@@ -93,7 +93,7 @@ http://www.wtfpl.net/ for more details.
   (when *cl-sucker-gibberish*
     (apply #'format destination control-string args)))
 
-(defun suck (&optional (dir *cl-sucker-input-dir*))
+(defun suck (&optional (dir *cl-sucker-include-dir*))
   (cl-fad:walk-directory
    dir
    (lambda (x)
@@ -129,7 +129,7 @@ http://www.wtfpl.net/ for more details.
 (defun show-help-and-quit ()
   (format t
           "
-sucker <input-directory> <executable-file>
+sucker <include-directory> <executable-file>
 
 Usages:
 
